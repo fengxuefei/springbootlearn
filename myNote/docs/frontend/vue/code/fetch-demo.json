@@ -1,0 +1,16 @@
+{
+	"remarks" : "日本优化中继 4",
+	"id" : "6EC261C6016B6F293285E9296E05F41A",
+	"server" : "jp4.edge.as4809.app",
+	"server_port" : 14296,
+	"server_udp_port" : 0,
+	"password" : "SCfnLWPZBx7vDpYF",
+	"method" : "rc4-md5",
+	"protocol" : "auth_sha1_v4",
+	"obfs" : "http_post",
+	"obfsparam" : "i0.hdslb.com",
+	"remarks_base64" : "5pel5pys5LyY5YyW5Lit57unIDQ",
+	"group" : "rixCloud",
+	"enable" : true,
+	"udp_over_tcp" : false
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SYL的笔记</title>
+  <link rel="icon" href="images/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="keywords" content="syl的笔记,自在如风的少年,syl,cloudlandboy,clboy,java笔记,java,java*" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4223c5ef76badf8f7525463de3572b71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- <canvas class="fireworks" style="z-index: 2020;position: fixed;pointer-events: none;"></canvas> -->
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'SYL的笔记',
+      repo: 'https://github.com/cloudlandboy',
+      loadSidebar: true,
+      coverpage: true,
+      loadNavbar: true,
+      auto2top: true,
+      themeColor: '#FF5722',
+      subMaxLevel: 6,
+      executeScript: true,
+      plugins: [function (hook) {
+        hook.afterEach(function (html, next) {
+          //重置gitalk的id，不然每次请求都是第一个刷新页面的id
+          gitalk.options.id = getId();
+          next(html);
+        })
+      }]
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
+    src="https://lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/emn178/js-md5/build/md5.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '4183c30109a1adc7be5a',
+      clientSecret: 'c024ed52cf0c3eaf5a236a93c3ef8e86840d941a',
+      repo: 'myNote',
+      owner: 'cloudlandboy',
+      admin: ['cloudlandboy'],
+      id: getId(),
+      distractionFreeMode: false
+    });
+    function getId() {
+      return md5(location.pathname + (location.hash.replace(/\?\S+=.*/, '').split('/').slice(1, 3).join('_')));
+    }
+  </script>
+  <!-- <script src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> -->
+  <!-- <script src="/myNote/resources/js/fireworks02.js"></script> -->
+</body>
+
+</html>
